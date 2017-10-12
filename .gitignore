@@ -1,0 +1,14 @@
+bin/
+target/
+file/
+log/
+.externalToolBuilders/
+.settings/
+.classpath
+.project
+.springBeans
+dependency-reduced-pom.xml
+.idea/
+*.iml
+.DS_Store
+
