@@ -1,6 +1,6 @@
 # barrage
-## simple get barrage from douyu
-## copy from other 
+simple get barrage from douyu copy from other 
+ 
 --------------
 ## TODO
 > auto send barrage on rule

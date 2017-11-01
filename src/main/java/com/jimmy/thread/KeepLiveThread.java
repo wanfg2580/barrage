@@ -1,4 +1,4 @@
-package com.jimmy;
+package com.jimmy.thread;
 
 import com.jimmy.bean.Request;
 import com.jimmy.handler.MessageHandler;

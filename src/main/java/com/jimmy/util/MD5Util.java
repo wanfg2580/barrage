@@ -3,7 +3,6 @@ package com.jimmy.util;
 import java.security.MessageDigest;
 
 /**
- * Copyright (C), 2017, 黑曜石
  *
  * @author jimmy
  * @desc MD5Util

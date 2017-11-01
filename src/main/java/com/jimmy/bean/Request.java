@@ -24,4 +24,8 @@ public class Request {
     public static String keepLive(int tick) {
         return String.format("type@=keeplive/tick@=%d/", tick);
     }
+
+    public static String buildMessage(String roomId, String userName, String message, int level) {
+        return String.format("type@=chatmsg/rid@=%s/gid@=-9999/uid@=/nn@=wanfg2580/txt@=%s/level@=%d/", roomId, userName, message, level);
+    }
 }

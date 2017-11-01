@@ -5,6 +5,8 @@ import com.jimmy.bean.Request;
 import com.jimmy.bean.ServerInfo;
 import com.jimmy.handler.MessageHandler;
 import com.jimmy.handler.ResponseParser;
+import com.jimmy.thread.KeepLiveThread;
+import com.jimmy.thread.SendBarrage;
 import com.jimmy.util.HttpRequest;
 import com.jimmy.util.MD5Util;
 import com.jimmy.util.SttCode;
@@ -19,14 +21,12 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Copyright (C), 2017, 五维引力（上海）数据服务有限公司
  *
  * @author jimmy
  * @desc main
  * @date 2017/10/11
  */
 public class Main {
-
 
     private static Logger logger = Logger.getLogger(Main.class);
     private static List<ServerInfo> danmakuServers = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Main {
     public static void main(String[] args) {
         PropertyConfigurator.configure("src/main/resources/log/log4j.properties");
         logger.info("");
-//        roomUrl = "https://www.douyu.com/3435448";
+//        roomUrl = "http://www.douyu.com/669746";
         roomUrl = "http://www.douyu.com/cave";
         getInf(roomUrl);
     }
@@ -203,6 +203,8 @@ public class Main {
 
             //心跳包线程启动
             new Thread(new KeepLiveThread(socket), "KeepLive-").start();
+
+            new Thread(new SendBarrage(socket), "sendBarrage").start();
 
             logger.info("开始接收弹幕 ...");
             logger.info("----------------------------------------------------------------");
