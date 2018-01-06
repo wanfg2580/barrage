@@ -30,7 +30,7 @@ public class Main {
 
     private static Logger logger = Logger.getLogger(Main.class);
     private static List<ServerInfo> danmakuServers = new ArrayList<>();
-    private static int rid = -1;
+    private static int rid = -1; //房间id
     private static int gid = -1;
     private static String roomUrl = "";
 
